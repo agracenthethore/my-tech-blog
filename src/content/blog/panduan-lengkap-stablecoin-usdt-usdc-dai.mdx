@@ -6,11 +6,16 @@ tags: ["Crypto", "Stablecoin", "DeFi"]
 ---
 
 import { Image } from "astro:assets";
+import PriceWidget from "../../components/PriceWidget";
 import comparisonImg from "../../assets/usdt-usdc-dai-comparison.jpg";
 
 ## TL;DR (Intinya Gimana?)
 
 Stablecoin bukan berarti 100% aman — USDT pernah drop ke $0.6, UST malah collapse total dan nyapu ratusan miliar dolar. Tapi kalau lo ngerti cara pakainya, stablecoin adalah salah satu tool paling powerful di crypto. Ini panduan lengkapnya.
+
+{/* 實時價格小工具 - 放在 TL;DR 下方增強互動感 */}
+
+<PriceWidget client:load />
 
 <Image
   src={comparisonImg}
@@ -44,19 +49,9 @@ Di pasar forex tradisional, hampir semua mata uang bisa dipasangkan dengan USD. 
 
 Hampir semua koin di exchange — dari BTC, ETH, sampai altcoin paling obscure — punya pasangan trading dengan USDT atau USDC. Ini kenapa kalau lo denerin trader Indonesia bilang _"ETH sekarang di 2.000 U"_, huruf **U** itu maksudnya USDT.
 
-Selain itu, stablecoin berfungsi sebagai **safe haven instan**. Kalau lo prediksi BTC mau koreksi, lo tinggal swap ke USDT dalam hitungan detik — tanpa harus keluar ke rupiah dulu. Nunggu momentum balik, masuk lagi. Ini jauh lebih efisien dari harus proses withdraw ke bank.
-
-Riset Visa 2024 juga nemuin sesuatu yang menarik khusus untuk Indonesia: pengguna di sini nggak cuma pakai stablecoin buat trading, tapi juga buat **konversi mata uang, pembayaran lintas negara, dan tabungan digital dalam denominasi dolar**. Ini masuk akal banget mengingat rupiah yang historisnya terus melemah terhadap USD.
-
 ### Biaya Transaksi Lebih Rendah
 
-Setiap kali lo convert rupiah ke crypto lewat kartu kredit atau transfer bank, ada biaya yang dimakan: fee kartu kredit, biaya transfer, spread nilai tukar. Kalau lo trading aktif, ini bisa nggerus profit lo pelan-pelan.
-
-Solusinya: **deposit sekali dalam jumlah besar ke stablecoin**, lalu semua trading dari situ. Lo cuma bayar trading fee platform, nggak ada biaya konversi mata uang lagi. Pas butuh cash, tinggal withdraw stablecoin ke rupiah satu kali.
-
-### Konsumsi Sehari-hari dan Donasi
-
-Ini masih niche tapi pertumbuhannya nyata. Beberapa merchant mulai terima USDT sebagai alat bayar, terutama di ekosistem Web3. Secara global, stablecoin juga dipakai untuk donasi lintas negara.
+Setiap kali lo convert rupiah ke crypto lewat kartu kredit atau transfer bank, ada biaya yang dimakan. Solusinya: **deposit sekali dalam jumlah besar ke stablecoin**, lalu semua trading dari situ. Lo cuma bayar trading fee platform, nggak ada biaya konversi mata uang lagi.
 
 ---
 
@@ -64,71 +59,19 @@ Ini masih niche tapi pertumbuhannya nyata. Beberapa merchant mulai terima USDT s
 
 ### 1. Fiat-Collateralized (Dijamin Mata Uang Fiat)
 
-Ini jenis paling umum dan paling mudah dipahami.
-
-**Contoh:** USDT, USDC, BUSD, FDUSD
-
-**Risiko utama:** Transparansi penerbit.
-
----
+**Contoh:** USDT, USDC. Paling stabil tapi bergantung pada kepercayaan ke penerbit.
 
 ### 2. Crypto-Collateralized (Dijamin Aset Kripto)
 
-Beda dari fiat-backed, jenis ini dijamin sama aset kripto — bukan uang fiat atau obligasi.
-
-**Contoh:** DAI dari MakerDAO.
-
-Sistem ini pakai **over-collateralization** — lo harus gadaikan 150%–200% dari nilai DAI yang mau lo pinjam.
-
----
+**Contoh:** DAI. Menggunakan sistem **over-collateralization** (jaminan berlebih).
 
 ### 3. Commodity-Backed (Dijamin Komoditas Fisik)
 
-Jenis ini pakai aset fisik dunia nyata sebagai jaminan — emas, perak, atau minyak.
-
-**Contoh:** PAXG (1 token = 1 troy ounce emas fisik).
-
----
+**Contoh:** PAXG (Emas).
 
 ### 4. Algorithmic Stablecoin (Tanpa Jaminan Fisik)
 
-Ini yang paling complex — dan paling berbahaya kalau salah. Harganya dijaga murni lewat algoritma supply-demand.
-
-**Contoh:** UST dari Terra/LUNA (Collapse Mei 2022).
-
----
-
-## 3 Stablecoin Terbesar: Perbandingan Lengkap
-
-### #1 USDT (Tether)
-
-|                 |                                |
-| --------------- | ------------------------------ |
-| **Diluncurkan** | 2014                           |
-| **Penerbit**    | Tether Limited                 |
-| **Cadangan**    | Mix: cash, obligasi, aset lain |
-
-**Best for:** Trading aktif, kebutuhan likuiditas tinggi.
-
-### #2 USDC (USD Coin)
-
-|                 |                                   |
-| --------------- | --------------------------------- |
-| **Diluncurkan** | 2018                              |
-| **Penerbit**    | Circle (Coinbase)                 |
-| **Audit**       | Monthly attestation oleh Deloitte |
-
-**Best for:** Pengguna yang prioritaskan transparansi, DeFi, holding jangka panjang.
-
-### #3 DAI
-
-|                 |                          |
-| --------------- | ------------------------ |
-| **Diluncurkan** | 2017                     |
-| **Penerbit**    | MakerDAO (Decentralized) |
-| **Audit**       | On-chain, real-time      |
-
-**Best for:** DeFi native, anti-terpusat.
+**Contoh:** UST (Terra/LUNA). **Sangat berisiko!**
 
 ---
 
